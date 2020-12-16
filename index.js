@@ -1,6 +1,10 @@
-var inquirer = require("inquirer");
-var generateMarkdown = require("./utils/generateMarkdown");
-var fs = require("fs");
+// required packages
+const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown");
+const fs = require("fs");
+
+// new README file that will be updated with user input
+const newReadMe = "newREADME.md";
 
 // array of questions for user
 const questions = [
@@ -9,7 +13,7 @@ const questions = [
         type: "input",
         message: "What is the title of your project?",
         name: "title",
-        default: "ReadME Generator"
+        default: "README Generator"
     },
 
     {
@@ -22,7 +26,8 @@ const questions = [
     {
         type: "input",
         message: "Provide installion instructions for your project:",
-        name: "installations",
+        name: "install",
+        default: '1.) Clone the repo from github 2.) Pull up the project in your file directory 3.) Type "npm i" into the console to install the required modules 4.) Type "node index.js" to run the program 5.) Follow the prompts until newREADME.md is generated in the project folder.'
     },
 
     {
@@ -33,21 +38,69 @@ const questions = [
     },
 
     {
+        type: "checkbox",
+        message: "What license are you using for this project?",
+        name: "license",
+        choices: ["MIT", "Academic", "GNU", "ISC", "Mozilla", "APACHE", "GPL", "BSD", "No License"],
+        default: "MIT"
+    },
+
+    {
         type: "input",
-        message: "List the contributors for this project:",
+        message: "How can I run a test?",
+        name: "test",
+        default: 'After the program is initalized with "node index.js". Click enter until a "newREADME.md" is generated to test if the program is working properly.'
+    },
+
+    {
+        type: "input",
+        message: "Who has contributed to this project?",
+        name: "credits",
+        default: "Jordan Stuckman"
+    },
+
+    {
+        type: "input",
+        message: "How can other contribute to this project?",
         name: "contributions",
-    }
+        default: "Contact me by email or just submit a pull request."
+    },
+
+    {
+        type: "input",
+        message: "Enter your github username:",
+        name: "githubName",
+        default: "jordanks93"
+    },
+
+    {
+        type: "input",
+        message: "Enter your email address:",
+        name: "email",
+        default: "jordanks93@gmail.com"
+    },
 
 ];
 
 
 // function to write README file
-function writeToFile(fileName, data) {
+function writeToFile(newReadMe, data) {
+    const userInput = generateMarkdown(data);
+
+    fs.writeFile(newReadMe, userInput, (err) => {
+        if (err) {
+            throw err;
+        } else {
+            console.log("readME Generated");
+        }
+    });
 }
+
 
 // function to initialize program
 function init() {
-
+    inquirer.prompt(questions)
+        .then((response) => writeToFile(newReadMe, response));
 }
 
 // function call to initialize program

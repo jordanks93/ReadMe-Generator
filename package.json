@@ -6,9 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Jordan Stuckman",
   "license": "ISC",
   "dependencies": {
     "inquirer": "^6.5.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordanks93/ReadMe-Generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jordanks93/ReadMe-Generator/issues"
+  },
+  "homepage": "https://github.com/jordanks93/ReadMe-Generator#readme"
 }
