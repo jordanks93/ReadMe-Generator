@@ -17,13 +17,15 @@ function generateMarkdown(data) {
   ${data.install}
   ## Usage
   ${data.usage}
+  ## Credits
+  ${data.credits}
   ## Contributions
   ${data.contributions}
   ## Testing
   ${data.test}
   ## Questions
-  If you have any questions or feedback, contact me at ${data.email}
-  My github profile is ${data.githubName}
+  If you have any questions or feedback, contact me at ${data.email}.
+  My github profile is ${data.githubName}.
   ## License
   ${data.license}
 

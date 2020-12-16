@@ -42,7 +42,6 @@ const questions = [
         message: "What license are you using for this project?",
         name: "license",
         choices: ["MIT", "Academic", "GNU", "ISC", "Mozilla", "APACHE", "GPL", "BSD", "No License"],
-        default: "MIT"
     },
 
     {
@@ -87,11 +86,11 @@ const questions = [
 function writeToFile(newReadMe, data) {
     const userInput = generateMarkdown(data);
 
-    fs.writeFile(newReadMe, userInput, (err) => {
-        if (err) {
-            throw err;
+    fs.writeFile(newReadMe, userInput, (error) => {
+        if (error) {
+            throw error;
         } else {
-            console.log("readME Generated");
+            console.log("README Generated");
         }
     });
 }
