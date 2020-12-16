@@ -17,7 +17,7 @@
   
 
   ## Usage
-  This project is used to automatically generate a readME file. In the terminal, make sure you are in the projects file directory. Then type node + 'filename'. You will then be prompted with questions to generate the readME.md for your project.
+  This project is used to automatically generate a readME file. In the terminal, make sure you are in the projects file directory. Then type node + 'filename'. You will then be prompted with questions to generate the newREADME file for your project.
   ## Credits
   Jordan Stuckman
   ## Contributions
