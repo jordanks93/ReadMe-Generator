@@ -13,7 +13,7 @@
    
   ## Installation
   1.) Clone the repo from github 2.) Pull up the project in your file directory 3.) Type "npm i" into the console to install the required modules 4.) Type "node index.js" to run the program 5.) Follow the prompts until newREADME.md is generated in the project folder.
-  ![Example README](Demo\Demo.gif)
+  ![Example README](Demo/Demo.gif)
   
 
   ## Usage
@@ -26,7 +26,7 @@
   After the program is initalized with "node index.js". Click enter until a "newREADME.md" is generated to test if the program is working properly.
 
   
-  ![Installation Gif](Demo\ExampleReadMe.JPG)
+  ![Installation Gif](Demo/ExampleReadMe.JPG)
   ## Questions
   If you have any questions or feedback, contact me at jordanks93@gmail.com.
   My github profile is jordanks93.
