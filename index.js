@@ -86,9 +86,10 @@ const questions = [
 function writeToFile(newReadMe, data) {
     const userInput = generateMarkdown(data);
 
-    fs.writeFile(newReadMe, userInput, (error) => {
-        if (error) {
-            throw error;
+    fs.writeFile(newReadMe, userInput, (fileError) => {
+        if (fileError) {
+            throw fileError;
+            console.log("README failed to generate");
         } else {
             console.log("README Generated");
         }
