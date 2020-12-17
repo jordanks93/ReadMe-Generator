@@ -7,6 +7,7 @@
   * [Installation](#installation)
   * [Usage](#usage)
   * [Credits](#credits)
+  * [Contributions](#contributions)
   * [Testing](#testing)
   * [Questions](#questions)
   * [License](#license)
