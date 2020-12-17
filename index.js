@@ -2,6 +2,10 @@
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 const fs = require("fs");
+const util = require('util');
+
+// used to create new readme file
+const writeFileAsync = util.promisify(fs.writeFile);
 
 // new README file that will be updated with user input
 const newReadMe = "newREADME.md";
@@ -81,27 +85,23 @@ const questions = [
 
 ];
 
-
-// function to write README file
-function writeToFile(newReadMe, data) {
-    const markdown = generateMarkdown(data);
-
-    fs.writeFile(newReadMe, markdown, (fileError) => {
-        if (fileError) {
-            console.log("README failed to generate");
-            throw fileError;
-        } else {
-            console.log("README Generated");
-        }
-    });
-}
-
-
 // function to initialize program
-function init() {
-    inquirer.prompt(questions)
-        .then((userInput) => writeToFile(newReadMe, userInput));
-}
+const init = async () => {
+    try {
+        // store user input
+        const userInput = await inquirer.prompt(questions);
+
+        // new markdown file
+        const markdown = generateMarkdown(userInput);
+
+        await writeFileAsync(newReadMe, markdown);
+        console.log("README has been created");
+
+    } catch(fileError) {
+        console.log("file generation failed");
+        throw fileError;
+    }
+};
 
 // function call to initialize program
 init();
