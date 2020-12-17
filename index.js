@@ -60,7 +60,7 @@ const questions = [
 
     {
         type: "input",
-        message: "How can other contribute to this project?",
+        message: "How can others contribute to this project?",
         name: "contributions",
         default: "Contact me by email or just submit a pull request."
     },
