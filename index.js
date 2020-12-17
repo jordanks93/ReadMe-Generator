@@ -84,9 +84,9 @@ const questions = [
 
 // function to write README file
 function writeToFile(newReadMe, data) {
-    const userInput = generateMarkdown(data);
+    const markdown = generateMarkdown(data);
 
-    fs.writeFile(newReadMe, userInput, (fileError) => {
+    fs.writeFile(newReadMe, markdown, (fileError) => {
         if (fileError) {
             throw fileError;
             console.log("README failed to generate");
