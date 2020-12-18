@@ -88,8 +88,8 @@ function writeToFile(newReadMe, data) {
 
     fs.writeFile(newReadMe, markdown, (fileError) => {
         if (fileError) {
-            throw fileError;
             console.log("README failed to generate");
+            throw fileError;
         } else {
             console.log("README Generated");
         }
@@ -100,7 +100,7 @@ function writeToFile(newReadMe, data) {
 // function to initialize program
 function init() {
     inquirer.prompt(questions)
-        .then((response) => writeToFile(newReadMe, response));
+        .then((userInput) => writeToFile(newReadMe, userInput));
 }
 
 // function call to initialize program
